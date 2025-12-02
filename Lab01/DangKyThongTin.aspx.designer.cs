@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace YourNamespace
+namespace Lab01
 {
 
 
-    public partial class DangKy
+    public partial class DangKyThongTin
     {
 
         /// <summary>

@@ -3,29 +3,28 @@ using System.Text;
 using System.Web.UI.WebControls;
 using System.IO; // Thêm thư viện này cho File Upload
 
-namespace YourNamespace // Đảm bảo đúng namespace của bạn
+namespace Lab01
 {
-    public partial class DangKy : System.Web.UI.Page
+    public partial class DangKyThongTin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // YÊU CẦU 2: Khởi tạo dữ liệu khi trang được nạp lần đầu
             if (!IsPostBack)
             {
-                // 1. Trình độ (DropDownList) - Theo ví dụ của thầy bạn
+                // 1. Trình độ 
                 ddlTrinhDo.Items.Clear();
                 ddlTrinhDo.Items.Add(new ListItem("Trung cấp", "TC"));
                 ddlTrinhDo.Items.Add(new ListItem("Cao đẳng", "CD"));
                 ddlTrinhDo.Items.Add(new ListItem("Đại học", "DH"));
                 ddlTrinhDo.Items.Add(new ListItem("Trên đại học", "TDH"));
 
-                // 2. Giới tính (RadioButtonList)
+                // 2. Giới tính 
                 rblGioiTinh.Items.Clear();
                 rblGioiTinh.Items.Add(new ListItem("Nam", "M"));
                 rblGioiTinh.Items.Add(new ListItem("Nữ", "F"));
                 rblGioiTinh.SelectedIndex = 0; // Chọn Nam mặc định
 
-                // 3. Nghề nghiệp (ListBox)
+                // 3. Nghề nghiệp 
                 lbNgheNghiep.Items.Clear();
                 lbNgheNghiep.Items.Add("Kỹ sư");
                 lbNgheNghiep.Items.Add("Bác sĩ");
@@ -33,7 +32,7 @@ namespace YourNamespace // Đảm bảo đúng namespace của bạn
                 lbNgheNghiep.Items.Add("Lập trình viên");
                 lbNgheNghiep.Items.Add("Khác");
 
-                // 4. Sở thích (CheckBoxList)
+                // 4. Sở thích 
                 cblSoThich.Items.Clear();
                 cblSoThich.Items.Add("Chơi game");
                 cblSoThich.Items.Add("Nghe nhạc");
@@ -46,7 +45,6 @@ namespace YourNamespace // Đảm bảo đúng namespace của bạn
         protected void btnGui_Click(object sender, EventArgs e)
         {
             // 1. Khai báo thư mục Upload
-            // Đảm bảo thư mục "Uploads" tồn tại trong thư mục gốc của dự án
             string uploadFolder = Server.MapPath("~/Uploads/");
             if (!Directory.Exists(uploadFolder))
             {
@@ -85,10 +83,8 @@ namespace YourNamespace // Đảm bảo đúng namespace của bạn
                 }
             }
 
-            // 3. Thu thập dữ liệu và xây dựng chuỗi HTML
             StringBuilder sb = new StringBuilder();
 
-            // Đặt tiêu đề kết quả (giống hình mẫu)
             sb.Append("<h2 style='text-align: center; border-bottom: 2px solid #00BCD4; padding-bottom: 10px; margin-bottom: 20px;'>KẾT QUẢ ĐĂNG KÝ</h2>");
 
             // Bắt đầu danh sách (<ul>)
@@ -121,13 +117,13 @@ namespace YourNamespace // Đảm bảo đúng namespace của bạn
             }
             else
             {
-                // Hiển thị hình ảnh mặc định (nếu có, hoặc thông báo)
-                // Giả sử có một ảnh mặc định trong thư mục Images/default.png (nếu không có, bạn có thể bỏ qua dòng này)
-                // sb.Append("<img src='Images/default.png' style='width: 150px;' />"); 
+                // Hiển thị hình ảnh mặc định
+                // Giả sử có một ảnh mặc định trong thư mục Images/default.png
+                sb.Append("<img src='Images/default.png' style='width: 150px;' />"); 
             }
             sb.Append("</div>");
 
-            // Sở thích (CheckBoxList)
+            // Sở thích
             string soThich = "";
             foreach (ListItem item in cblSoThich.Items)
             {

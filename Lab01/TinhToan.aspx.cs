@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI.WebControls;
 
-namespace YourNamespace // Đảm bảo đúng namespace của bạn
+namespace Lab01 
 {
     public partial class TinhToan : System.Web.UI.Page
     {
