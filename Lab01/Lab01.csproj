@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DangKyThongTin.aspx" />
+    <Content Include="DonDatHang.aspx" />
     <Content Include="Global.asax" />
     <Content Include="TinhToan.aspx" />
     <Content Include="Web.config" />
@@ -79,6 +80,13 @@
     </Compile>
     <Compile Include="DangKyThongTin.aspx.designer.cs">
       <DependentUpon>DangKyThongTin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonDatHang.aspx.cs">
+      <DependentUpon>DonDatHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonDatHang.aspx.designer.cs">
+      <DependentUpon>DonDatHang.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
