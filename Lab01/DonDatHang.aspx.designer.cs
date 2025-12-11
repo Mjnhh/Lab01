@@ -42,6 +42,15 @@ namespace Lab01
         protected global::System.Web.UI.WebControls.TextBox txtKhachHang;
 
         /// <summary>
+        /// rfvKhachHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvKhachHang;
+
+        /// <summary>
         /// lblDiaChi control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Lab01
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDiaChi;
+
+        /// <summary>
+        /// rfvDiaChi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDiaChi;
 
         /// <summary>
         /// lblMaSoThue control.
@@ -78,6 +96,24 @@ namespace Lab01
         protected global::System.Web.UI.WebControls.TextBox txtMaSoThue;
 
         /// <summary>
+        /// rfvMaSoThue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaSoThue;
+
+        /// <summary>
+        /// revMaSoThue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revMaSoThue;
+
+        /// <summary>
         /// lblChonBanh control.
         /// </summary>
         /// <remarks>
@@ -96,6 +132,15 @@ namespace Lab01
         protected global::System.Web.UI.WebControls.DropDownList ddlLoaiBanh;
 
         /// <summary>
+        /// rfvLoaiBanh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLoaiBanh;
+
+        /// <summary>
         /// lblSoLuong control.
         /// </summary>
         /// <remarks>
@@ -112,6 +157,24 @@ namespace Lab01
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSoLuong;
+
+        /// <summary>
+        /// rfvSoLuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSoLuong;
+
+        /// <summary>
+        /// rngSoLuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rngSoLuong;
 
         /// <summary>
         /// lblDonVi control.
@@ -175,5 +238,14 @@ namespace Lab01
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblKetQua;
+
+        /// <summary>
+        /// vsSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsSummary;
     }
 }

@@ -12,6 +12,7 @@ namespace Lab01
             {
                 // Nạp dữ liệu mẫu cho các loại bánh vào DropDownList
                 ddlLoaiBanh.Items.Clear();
+                ddlLoaiBanh.Items.Add(new ListItem("-- Chọn bánh --", ""));
                 ddlLoaiBanh.Items.Add(new ListItem("Bánh Croissant bơ", "Croissant"));
                 ddlLoaiBanh.Items.Add(new ListItem("Bánh bò nướng", "BanhBo"));
                 ddlLoaiBanh.Items.Add(new ListItem("Patés chauds", "Pates"));
@@ -32,8 +33,13 @@ namespace Lab01
 
         protected void btnThem_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             // Kiểm tra đã chọn loại bánh và nhập số lượng
-            if (ddlLoaiBanh.SelectedIndex < 0)
+            if (ddlLoaiBanh.SelectedIndex < 0 || string.IsNullOrEmpty(ddlLoaiBanh.SelectedValue))
             {
                 return;
             }
@@ -69,6 +75,11 @@ namespace Lab01
 
         protected void btnInDon_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             StringBuilder sb = new StringBuilder();
 
             // Tạo container cho hóa đơn với border đỏ và shadow

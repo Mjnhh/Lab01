@@ -26,6 +26,8 @@
                     </td>
                     <td style="padding: 10px;">
                         <asp:TextBox ID="txtKhachHang" runat="server" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvKhachHang" runat="server" ControlToValidate="txtKhachHang"
+                            ErrorMessage="Vui lòng nhập khách hàng" Text="*" ValidationGroup="Order" Display="Dynamic" />
                     </td>
                 </tr>
 
@@ -35,6 +37,8 @@
                     </td>
                     <td style="padding: 10px;">
                         <asp:TextBox ID="txtDiaChi" runat="server" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDiaChi" runat="server" ControlToValidate="txtDiaChi"
+                            ErrorMessage="Vui lòng nhập địa chỉ" Text="*" ValidationGroup="Order" Display="Dynamic" />
                     </td>
                 </tr>
 
@@ -44,6 +48,12 @@
                     </td>
                     <td style="padding: 10px;">
                         <asp:TextBox ID="txtMaSoThue" runat="server" Width="100%"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvMaSoThue" runat="server" ControlToValidate="txtMaSoThue"
+                            ErrorMessage="Vui lòng nhập mã số thuế" Text="*" ValidationGroup="Order" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revMaSoThue" runat="server" ControlToValidate="txtMaSoThue"
+                            ValidationExpression="^\d{6,15}$"
+                            ErrorMessage="Mã số thuế chỉ gồm số (6-15 ký tự)"
+                            Text="*" ValidationGroup="Order" Display="Dynamic" />
                     </td>
                 </tr>
 
@@ -56,6 +66,9 @@
                                     <asp:Label ID="lblChonBanh" runat="server" Text="Chọn các lọai bánh sau:" Font-Bold="True"></asp:Label>
                                     <br />
                                     <asp:DropDownList ID="ddlLoaiBanh" runat="server" Width="100%" style="margin-top: 5px;"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvLoaiBanh" runat="server" ControlToValidate="ddlLoaiBanh"
+                                        InitialValue="" ErrorMessage="Vui lòng chọn loại bánh"
+                                        Text="*" ValidationGroup="Order" Display="Dynamic" />
                                     <br />
                                     <table style="width: 100%; margin-top: 10px;">
                                         <tr>
@@ -64,6 +77,12 @@
                                             </td>
                                             <td style="width: auto; padding: 5px;">
                                                 <asp:TextBox ID="txtSoLuong" runat="server" Width="100px"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvSoLuong" runat="server" ControlToValidate="txtSoLuong"
+                                                    ErrorMessage="Vui lòng nhập số lượng" Text="*" ValidationGroup="Order" Display="Dynamic" />
+                                                <asp:RangeValidator ID="rngSoLuong" runat="server" ControlToValidate="txtSoLuong"
+                                                    MinimumValue="1" MaximumValue="100000" Type="Integer"
+                                                    ErrorMessage="Số lượng phải từ 1 đến 100000"
+                                                    Text="*" ValidationGroup="Order" Display="Dynamic" />
                                             </td>
                                             <td style="width: auto; padding: 5px;">
                                                 <asp:Label ID="lblDonVi" runat="server" Text="cái"></asp:Label>
@@ -72,7 +91,8 @@
                                     </table>
                                     <div style="text-align: center; margin-top: 10px;">
                                         <asp:ImageButton ID="btnThem" runat="server" ImageUrl="~/Images/rt.gif" 
-                                            OnClick="btnThem_Click" Width="50px" Height="30px" />
+                                            OnClick="btnThem_Click" Width="50px" Height="30px"
+                                            ValidationGroup="Order" CausesValidation="True" />
                                     </div>
                                 </td>
                                 <td style="width: 50%; vertical-align: top; padding-left: 10px;">
@@ -99,13 +119,16 @@
                 <tr>
                     <td colspan="2" style="text-align: center; padding: 20px;">
                         <asp:Button ID="btnInDon" runat="server" Text="In đơn đặt hàng" OnClick="btnInDon_Click" 
-                            BackColor="#4CAF50" ForeColor="White" Width="200px" Height="40px" Font-Size="16px" Font-Bold="True" />
+                            BackColor="#4CAF50" ForeColor="White" Width="200px" Height="40px" Font-Size="16px" Font-Bold="True"
+                            ValidationGroup="Order" CausesValidation="True" />
                     </td>
                 </tr>
             </table>
             
             <!-- Khu vực hiển thị kết quả in đơn -->
             <asp:Label ID="lblKetQua" runat="server" style="display: block; padding: 20px; border-top: 1px solid #ccc;"></asp:Label>
+            <asp:ValidationSummary ID="vsSummary" runat="server" ValidationGroup="Order"
+                HeaderText="Vui lòng kiểm tra:" DisplayMode="List" />
         </div>
     </form>
 </body>
